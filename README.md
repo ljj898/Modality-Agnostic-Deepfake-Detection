@@ -33,7 +33,7 @@ Two checkpoints are needed and are **not** stored in the repository:
 | File | Purpose | Where to get it |
 | --- | --- | --- |
 | `SR_weights/visual_frontend.pt` | Pretrained lip-region visual frontend | From the upstream [deep_avsr SR_weights](https://github.com/lordmartian/deep_avsr) |
-| Detection checkpoint, e.g. `train-step_0020.pt` | The deepfake detection model | Released alongside the paper — see the [project page / release section] |
+| Detection checkpoint, e.g. `./best_model.pt` | The deepfake detection model | Released alongside the paper — see the [project page / release section] |
 
 Place them anywhere on disk and point at them with the CLI flags below.
 
@@ -43,9 +43,9 @@ Single file:
 
 ```bash
 python main.py \
-  --input_path  /path/to/clip.mp4 \
+  --input_path  xxx.mp4 \
   --output_path ./output_folder \
-  --checkpoint_path /path/to/train-step_0020.pt \
+  --checkpoint_path ./best_model.pt \
   --frontend_path   ./SR_weights/visual_frontend.pt
 ```
 
@@ -104,7 +104,6 @@ models/
   composition_classifier.py
 data/
   utils.py                STFT extraction, collate functions
-  lrs2_dataset.py         training dataset loaders (paths are placeholders;
                           edit to match your data layout)
 utils/
   preprocessing.py        per-sample audio extraction + ROI + features
@@ -117,12 +116,12 @@ utils/
 ## Citation
 
 ```bibtex
-@inproceedings{avsr_deepfake_2025,
-  title  = {Modality-Agnostic Deepfake Detection},
-  author = {...},
-  booktitle = {...},
-  year   = {2025},
-  doi    = {10.1145/3733102.3733133}
+@inproceedings{cai2025modality,
+  title={Modality-agnostic deepfakes detection},
+  author={Cai, Yu and Chen, Peng and Tian, Jiahe and Liu, Jin and Dai, Jiao and Wang, Xi and Jia, Shan and Lyu, Siwei and Han, Jizhong},
+  booktitle={Proceedings of the 2025 ACM Workshop on Information Hiding and Multimedia Security},
+  pages={12--23},
+  year={2025}
 }
 ```
 
