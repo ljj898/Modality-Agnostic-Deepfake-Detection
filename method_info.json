@@ -1,0 +1,35 @@
+{
+  "AVSRDD": {
+    "task": "Dual Label Deepfake Video Detection",
+    "analytic_name": "Modality Agnostic Deepfake Detection",
+    "image_name": "AVSRDD ",
+    "modality": ["video","audio"],
+    "analytic_description": "An AVSR-based audio/visual deepfake detection method that leverages speech correlation. The model uses dual-branch encoders for audio and video to support independent detection of each modality.",
+    "analysis_scope": " Audio or Videos featuring a single face. A centered, frontal face orientation is preferred, without sunglasses, occlusion, or other visual obstructions.",
+    "paper_reference": "https://dl.acm.org/doi/10.1145/3733102.3733133",
+    "code_reference": "None",
+    "scope": {
+      "video": ["mp4", "avi","mov"],
+      "audio": ["mp3", "wav"]
+    },
+    "scope_all": ["mp4", "avi","mov","mp3", "wav"],
+    "result_description": "The probability of input video or audio is real",
+    "advanced_result": "",
+    "usage": "Example: $ docker run -it --gpus 1 -v /home/ubmdfl/Documents/Media/:/Media altfreezing python main.py --input_path /Media/new_pipelines/altfreezing/Test_Data/test_video1.mp4 --output_path /Media/new_pipelines/altfreezing/Test_Data",
+    "args": {
+      "input_path": "String type, video file path. The video must be at least 5 seconds long and have a single face in the entire video",
+      "output_path": "String type, output path for result.json, the folder should be created before",
+      "info_path": "String type, external path for method_info.json",
+      "d": "Action true, you should use it when input path is a folder"
+    },
+    "input_size_limit_MB": {
+      "video": 50
+    },
+    "errors": {
+      "size": "Error: File size over limitation.",
+      "format": "Error: Format not match.",
+      "no_face": "Error: No human face detected, please upload videos with human faces."
+    },
+    "timeout_in_sec": 6000
+  }
+}

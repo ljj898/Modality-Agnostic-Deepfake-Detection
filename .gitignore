@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.mypy_cache/
+.pytest_cache/
+
+# Local outputs / artifacts
+temp/
+output_folder/
+*.npy
+*.png
+*.jpg
+*.jpeg
+*.mp4
+*.mov
+*.avi
+*.wav
+*.mp3
+
+# Model weights — host these externally (HuggingFace / Drive) and document
+# how to fetch them in the README.
+NoneDropAblation/
+SR_weights/*.pt
+*.pt
+*.pth
+*.hdf5
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
