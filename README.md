@@ -55,7 +55,7 @@ Folder of files (audio and/or video, processed individually):
 python main.py --d \
   --input_path  /path/to/folder \
   --output_path ./output_folder \
-  --checkpoint_path /path/to/train-step_0020.pt
+  --checkpoint_path ./best_model.pt
 ```
 
 Force a specific mode (overrides the extension-based default):
@@ -71,7 +71,7 @@ A `result.json` is written into `--output_path`:
 ```json
 {
   "Task": "Dual Label Deepfake Video Detection",
-  "Input File": "clip.mp4",
+  "Input File": "xxx.mp4",
   "Mode": "AV",
   "Result": { "Real Probability": 0.123, "Fake Probability": 0.877 },
   "Result Description": "There is no chance that the sample is real.",
