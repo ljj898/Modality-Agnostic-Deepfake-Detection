@@ -33,7 +33,7 @@ Two checkpoints are needed and are **not** stored in the repository:
 | File | Purpose | Where to get it |
 | --- | --- | --- |
 | `SR_weights/visual_frontend.pt` | Pretrained lip-region visual frontend | From the upstream [deep_avsr SR_weights](https://github.com/lordmartian/deep_avsr) |
-| Detection checkpoint, e.g. `./best_model.pt` | The deepfake detection model | Released alongside the paper — see the [project page / release section] |
+| Detection checkpoint, e.g. `./best_model.pt` | The deepfake detection model |See the [Weights](https://drive.google.com/drive/folders/1ep7UM67O4GzszXMu52w57kPdop6cbHn3) |
 
 Place them anywhere on disk and point at them with the CLI flags below.
 
